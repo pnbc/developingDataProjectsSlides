@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Application to explore Iris dataset</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Application to explore Iris dataset">
+  <meta name="author" content="">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Application to explore Iris dataset</h1>
+    <h2></h2>
+    <p><br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>1: What is Iris dataset</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The Iris Dataset is a canonical dataset for exploring machine learning in.
+This data sets consists of 3 different types of irises&#39; (Setosa, Versicolour, and Virginica) and the features that can be used to classify the instances of iris. Four features are available: Sepal Length, Sepal Width, Petal Length and Petal Width.</p>
+
+<p>The shiny application <a href="https://pnbddp.shinyapps.io/project">https://pnbddp.shinyapps.io/project</a> allows user to play to explore this dataset and try 4 different classifiers. </p>
+
+<p>Next slides are going to explain each part of the applicaiton in detail 
+--- .class #id </p>
+
+<h2>2: The UI</h2>
+
+<p>The UI of the app has left and right panel</p>
+
+<ul>
+<li>Lefft panel provides menu selection. This section is itself split into two - one that allows to play with features, and another that allows to select different machine learning models</li>
+<li>Right panel shows the plots and the result of evaluating different machine learning models.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>3: Feature selection</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>User can choose to explore the connection between the features available and classes (labels) of flowers. To do so, user can choose features to be plotted on x and y axis, and the color of the points is going to represent the type of the Species. By choosing different features, user can explore which features help to clearly separate different Species (and thus might be useful for the classifiers), and overall get the feel of the data available</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>4: Trying different classifiers</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>4 classifiers are available to the user</p>
+
+<ul>
+<li>Naive bayes</li>
+<li>Multinomial logistic regression (maxent)</li>
+<li>Svm with linear kernel</li>
+<li>Random forest
+When user chooses the classifier, we perform 5 fold cross validation for on the iris dataset and report back the confusion matrix for the selected classifier. This way users can compare generalization performance of different classifiers and choose the best classifier.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>5: Example of the classifier output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>As you can see, user is presented with confusion matrix for Naive Bayes classifier, that shows that the model confused 3 instances of virginica and versicolor</p>
+
+<pre><code>##             Reference
+## Prediction   setosa versicolor virginica
+##   setosa         50          0         0
+##   versicolor      0         47         3
+##   virginica       0          3        47
+</code></pre>
+
+<p>Additionally user will be able to see overall generalization accuracy (96%) of the classifier and additional model info</p>
+
+<pre><code>##       Accuracy          Kappa  AccuracyLower  AccuracyUpper   AccuracyNull 
+##   9.600000e-01   9.400000e-01   9.149722e-01   9.851815e-01   3.333333e-01 
+## AccuracyPValue  McnemarPValue 
+##   2.525127e-60            NaN
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='1: What is Iris dataset'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='3: Feature selection'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='4: Trying different classifiers'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='5: Example of the classifier output'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
